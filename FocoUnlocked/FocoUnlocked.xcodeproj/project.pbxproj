@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ECE551871FD201F100E02654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE551861FD201F100E02654 /* AppDelegate.swift */; };
-		ECE551891FD201F100E02654 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE551881FD201F100E02654 /* ViewController.swift */; };
+		ECE551891FD201F100E02654 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE551881FD201F100E02654 /* DashboardViewController.swift */; };
 		ECE5518C1FD201F100E02654 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE5518A1FD201F100E02654 /* Main.storyboard */; };
 		ECE5518E1FD201F100E02654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE5518D1FD201F100E02654 /* Assets.xcassets */; };
 		ECE551911FD201F100E02654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE5518F1FD201F100E02654 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		ECE551831FD201F100E02654 /* FocoUnlocked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocoUnlocked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECE551861FD201F100E02654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECE551881FD201F100E02654 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECE551881FD201F100E02654 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		ECE5518B1FD201F100E02654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECE5518D1FD201F100E02654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECE551901FD201F100E02654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				ECE551861FD201F100E02654 /* AppDelegate.swift */,
-				ECE551881FD201F100E02654 /* ViewController.swift */,
+				ECE551881FD201F100E02654 /* DashboardViewController.swift */,
 				ECE5518A1FD201F100E02654 /* Main.storyboard */,
 				ECE5518D1FD201F100E02654 /* Assets.xcassets */,
 				ECE5518F1FD201F100E02654 /* LaunchScreen.storyboard */,
@@ -136,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECE551891FD201F100E02654 /* ViewController.swift in Sources */,
+				ECE551891FD201F100E02654 /* DashboardViewController.swift in Sources */,
 				ECE551871FD201F100E02654 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
