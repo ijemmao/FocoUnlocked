@@ -9,15 +9,6 @@
 import UIKit
 
 class DashboardViewController: UIViewController, UITableViewDataSource {
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var dishName: UILabel!
-    @IBOutlet weak var dishImage: UIImageView!
-    @IBOutlet weak var share: UIImageView!
-    @IBOutlet weak var likeCount: UILabel!
-    @IBOutlet weak var like: UIImageView!
-    @IBOutlet weak var save: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +21,17 @@ class DashboardViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell();
-        cell.textLabel?.text = "this is a cell"
+//        let cell = UITableViewCell();
+//        cell.textLabel?.text = "this is a cell"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Post") as! PostCellTableViewCell
+//        let cell = UITableViewCell() as! PostCellTableViewCell
+//        cell.username.text = "Ijemma Onwuzulike"
+//        cell.date.text = "8 hours ago"
+//        cell.dishName.text = "Cereal"
+//        cell.likeCount.text = "800 likes"
+        
+        
         return cell
     }
     

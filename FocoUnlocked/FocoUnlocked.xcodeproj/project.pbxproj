@@ -13,6 +13,7 @@
 		ECE5518E1FD201F100E02654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECE5518D1FD201F100E02654 /* Assets.xcassets */; };
 		ECE551911FD201F100E02654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE5518F1FD201F100E02654 /* LaunchScreen.storyboard */; };
 		ECFF07351FD38DD000ACD6C7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFF07341FD38DD000ACD6C7 /* Post.swift */; };
+		ECFF07371FD393C800ACD6C7 /* PostCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFF07361FD393C800ACD6C7 /* PostCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ECE551901FD201F100E02654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECE551921FD201F100E02654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECFF07341FD38DD000ACD6C7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		ECFF07361FD393C800ACD6C7 /* PostCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				ECE551881FD201F100E02654 /* DashboardViewController.swift */,
 				ECFF07341FD38DD000ACD6C7 /* Post.swift */,
 				ECE5518A1FD201F100E02654 /* Main.storyboard */,
+				ECFF07361FD393C800ACD6C7 /* PostCellTableViewCell.swift */,
 				ECE5518D1FD201F100E02654 /* Assets.xcassets */,
 				ECE5518F1FD201F100E02654 /* LaunchScreen.storyboard */,
 				ECE551921FD201F100E02654 /* Info.plist */,
@@ -142,6 +145,7 @@
 				ECFF07351FD38DD000ACD6C7 /* Post.swift in Sources */,
 				ECE551891FD201F100E02654 /* DashboardViewController.swift in Sources */,
 				ECE551871FD201F100E02654 /* AppDelegate.swift in Sources */,
+				ECFF07371FD393C800ACD6C7 /* PostCellTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
