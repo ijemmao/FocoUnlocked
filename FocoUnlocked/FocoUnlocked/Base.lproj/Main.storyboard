@@ -117,9 +117,8 @@
                                     <constraint firstItem="iks-c1-qYK" firstAttribute="top" secondItem="vQP-V7-fpU" secondAttribute="top" constant="13" id="u2F-Qb-PSH"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j6B-24-rbz">
-                                <rect key="frame" x="0.0" y="107" width="375" height="560"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j6B-24-rbz">
+                                <rect key="frame" x="0.0" y="91" width="375" height="576"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Dish" rowHeight="355" id="CDz-bL-O0y">
@@ -181,16 +180,34 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="lQh-WM-hXH"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="j6B-24-rbz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="082-Qt-YM3"/>
                             <constraint firstItem="vQP-V7-fpU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DBY-uN-gcz"/>
+                            <constraint firstItem="j6B-24-rbz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wh3-ms-ODe"/>
+                            <constraint firstItem="j6B-24-rbz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bRF-zK-jEW"/>
                             <constraint firstItem="vQP-V7-fpU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gun-hr-PUK"/>
+                            <constraint firstItem="j6B-24-rbz" firstAttribute="top" secondItem="vQP-V7-fpU" secondAttribute="bottom" id="t3W-MG-Lpd"/>
                             <constraint firstItem="vQP-V7-fpU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tow-pb-EXx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="date" destination="CkF-mf-Bbz" id="Xfq-Ul-JS9"/>
+                        <outlet property="dishImage" destination="PLH-a4-Xer" id="6hF-0d-17K"/>
+                        <outlet property="dishName" destination="x2N-5R-HAG" id="hFa-2n-6YP"/>
+                        <outlet property="like" destination="N2s-Wu-0EK" id="y4F-qS-4nh"/>
+                        <outlet property="likeCount" destination="1Xk-zP-9uU" id="1tq-ue-hHM"/>
+                        <outlet property="save" destination="3C3-sX-BGu" id="Z5h-c7-gsD"/>
+                        <outlet property="share" destination="Tbi-nJ-aE6" id="TPF-AK-b9f"/>
+                        <outlet property="userImage" destination="bz1-lI-U8k" id="dRx-c1-M8n"/>
+                        <outlet property="username" destination="FPZ-c5-SNZ" id="VET-Ry-sWv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
