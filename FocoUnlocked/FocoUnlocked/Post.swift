@@ -10,16 +10,25 @@ import Foundation
 
 class Post {
     let username: String;
-    let time: Date;
+    let time: NSDate;
     let dishName: String;
     let image: NSData;
     let likes: Int;
     
-    init(username: String, time: Date, dishName: String, image: NSData, likes: Int) {
-        self.username = username;
-        self.time = time;
-        self.dishName = dishName;
-        self.image = image;
-        self.likes = likes;
+    init(username: String, time: NSDate, dishName: String, image: NSData, likes: Int) {
+        self.username = username
+        self.time = time
+        self.dishName = dishName
+        self.image = image
+        self.likes = likes
+    }
+    
+    func toString() -> String {
+        var state = ""
+        state += "Username: \(self.username)"
+        state += "\nTime: \(self.time)"
+        state += "\nDish Name: \(self.dishName)"
+        state += "\nLikes: \(self.likes)"
+        return state
     }
 }
