@@ -9,8 +9,12 @@
 import UIKit
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var dishTitle: UITextField!
+    @IBOutlet weak var ingredients: UITextView!
     @IBOutlet weak var pickedImage: UIImageView!
-
+    @IBOutlet weak var directions: UITextView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +25,13 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func savePost(_ sender: Any) {
+        // Creating new post object
+        let newPost = Post(username: "Kendrick Lamar", time: NSDate(), dishName: dishTitle.text!, image: UIImagePNGRepresentation(pickedImage.image!)! as NSData, likes: 0);
+        print(newPost.toString());
+    }
     
+    // opens the gallery for user to choose image
     @IBAction func openGallery(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -34,6 +44,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
+    // opens camera for user to take image
     @IBAction func openCamera(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()

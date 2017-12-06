@@ -452,15 +452,6 @@
                                             <segue destination="BYZ-38-t0r" kind="show" id="3ud-fq-ea4"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V73-id-Tbe">
-                                        <rect key="frame" x="42" y="28" width="291" height="37"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="37" id="veo-Vx-lUW"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="27"/>
-                                        <color key="textColor" red="0.058823529409999999" green="0.58823529409999997" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piV-SH-qQX">
                                         <rect key="frame" x="333" y="13" width="34" height="34"/>
                                         <constraints>
@@ -469,17 +460,27 @@
                                             <constraint firstAttribute="height" constant="34" id="v1B-IP-Uqc"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="savePost:" destination="cIQ-fk-XKg" eventType="touchUpInside" id="lhj-6M-TZn"/>
+                                        </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dish Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5AL-En-fwU">
+                                        <rect key="frame" x="34" y="27" width="291" height="37"/>
+                                        <color key="backgroundColor" red="0.78648025040179892" green="0.86217084390862941" blue="0.79608000947673419" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0068388171494007111" green="0.65703779458999634" blue="0.96047681570053101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="5AL-En-fwU" firstAttribute="leading" secondItem="A7k-4Y-JOh" secondAttribute="leading" constant="34" id="3RV-td-TCS"/>
+                                    <constraint firstItem="piV-SH-qQX" firstAttribute="leading" secondItem="5AL-En-fwU" secondAttribute="trailing" constant="8" symbolic="YES" id="AZ8-gb-wBk"/>
                                     <constraint firstAttribute="width" constant="375" id="B5T-hn-Bej"/>
+                                    <constraint firstItem="5AL-En-fwU" firstAttribute="centerY" secondItem="A7k-4Y-JOh" secondAttribute="centerY" id="Ggh-iR-cll"/>
                                     <constraint firstItem="DHh-gP-evy" firstAttribute="top" secondItem="A7k-4Y-JOh" secondAttribute="top" constant="13" id="HUS-cp-Cku"/>
-                                    <constraint firstItem="piV-SH-qQX" firstAttribute="leading" secondItem="V73-id-Tbe" secondAttribute="trailing" id="J0E-xC-Y6L"/>
-                                    <constraint firstItem="V73-id-Tbe" firstAttribute="leading" secondItem="DHh-gP-evy" secondAttribute="trailing" id="M9n-Cq-j36"/>
                                     <constraint firstItem="DHh-gP-evy" firstAttribute="leading" secondItem="A7k-4Y-JOh" secondAttribute="leading" constant="8" id="aHx-bc-izj"/>
                                     <constraint firstItem="piV-SH-qQX" firstAttribute="top" secondItem="A7k-4Y-JOh" secondAttribute="top" constant="13" id="fHK-2q-Uwg"/>
-                                    <constraint firstItem="V73-id-Tbe" firstAttribute="top" secondItem="A7k-4Y-JOh" secondAttribute="top" constant="28" id="k6t-9q-p1F"/>
                                     <constraint firstAttribute="height" constant="91" id="o3m-0K-GJd"/>
                                     <constraint firstAttribute="trailing" secondItem="piV-SH-qQX" secondAttribute="trailing" constant="8" id="teM-aK-osb"/>
                                 </constraints>
@@ -611,6 +612,9 @@
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="directions" destination="OKi-c1-yjz" id="s51-9w-A8r"/>
+                        <outlet property="dishTitle" destination="5AL-En-fwU" id="aQM-9P-NDo"/>
+                        <outlet property="ingredients" destination="Jb2-oz-7s5" id="I4l-H7-8x0"/>
                         <outlet property="pickedImage" destination="l3F-cD-cOo" id="tvX-m6-rWY"/>
                     </connections>
                 </viewController>
