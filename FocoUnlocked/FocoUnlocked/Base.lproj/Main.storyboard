@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="-639.20000000000005" y="33.733133433283363"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="9lH-nf-Q7D">
             <objects>
-                <viewController id="vpO-Wl-hh0" sceneMemberID="viewController">
+                <viewController id="vpO-Wl-hh0" customClass="SignupViewController" customModule="FocoUnlocked" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nr6-Xk-FIM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,6 +153,7 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="qJx-B8-JOO" eventType="touchUpInside" id="MUB-8N-UHg"/>
+                                    <action selector="login:" destination="vpO-Wl-hh0" eventType="touchUpInside" id="YcF-A1-DhW"/>
                                     <segue destination="qJx-B8-JOO" kind="show" id="11L-mV-4jq"/>
                                 </connections>
                             </button>
@@ -167,6 +168,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signup:" destination="qJx-B8-JOO" eventType="touchUpInside" id="TD7-7X-0US"/>
+                                    <action selector="signup:" destination="vpO-Wl-hh0" eventType="touchUpInside" id="jf5-Ie-nbP"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="CTg-VH-nGF"/>
                                 </connections>
                             </button>
@@ -191,6 +193,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wIU-yd-s9C"/>
                     </view>
+                    <connections>
+                        <outlet property="emailInput" destination="VkA-pt-Lkb" id="VQC-fk-Gcz"/>
+                        <outlet property="passwordInput" destination="JN7-DM-aUN" id="Q8R-Ia-8Bs"/>
+                        <outlet property="usernameInput" destination="S9t-3G-Zdb" id="c4B-y1-caa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWU-AS-rLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
