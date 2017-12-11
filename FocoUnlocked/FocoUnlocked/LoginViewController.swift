@@ -12,9 +12,15 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        emailInput.leftViewMode = .always
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let image = UIImage(named: "email.png")
+        imageView.image = image
+        emailInput.leftView = imageView
+        passwordInput.leftViewMode = .always
         // Do any additional setup after loading the view.
     }
 

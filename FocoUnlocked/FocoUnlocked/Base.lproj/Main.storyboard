@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qb-BM-pQ1">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qb-BM-pQ1" customClass="LeftPaddedTextField" customModule="FocoUnlocked" customModuleProvider="target">
                                 <rect key="frame" x="17" y="357" width="343" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -820,7 +820,6 @@
         <image name="star" width="108" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AWj-R2-dF7"/>
-        <segue reference="wbu-Z2-3T1"/>
+        <segue reference="dXo-12-v0G"/>
     </inferredMetricsTieBreakers>
 </document>
