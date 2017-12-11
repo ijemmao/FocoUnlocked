@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC41F45B1FDE2C420013E731 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC41F45A1FDE2C420013E731 /* SignupViewController.swift */; };
 		ECDD7BC41FD78A4300B6B72F /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD7BC31FD78A4300B6B72F /* PostViewController.swift */; };
 		ECDD7BC61FD7BFD400B6B72F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDD7BC51FD7BFD400B6B72F /* LoginViewController.swift */; };
 		ECE551871FD201F100E02654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE551861FD201F100E02654 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC41F45A1FDE2C420013E731 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		ECDD7BC31FD78A4300B6B72F /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		ECDD7BC51FD7BFD400B6B72F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ECE551831FD201F100E02654 /* FocoUnlocked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocoUnlocked.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +70,7 @@
 				ECFF07341FD38DD000ACD6C7 /* Post.swift */,
 				ECE5518A1FD201F100E02654 /* Main.storyboard */,
 				ECDD7BC51FD7BFD400B6B72F /* LoginViewController.swift */,
+				EC41F45A1FDE2C420013E731 /* SignupViewController.swift */,
 				ECFF07361FD393C800ACD6C7 /* PostCellTableViewCell.swift */,
 				ECE5518D1FD201F100E02654 /* Assets.xcassets */,
 				ECE5518F1FD201F100E02654 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECDD7BC61FD7BFD400B6B72F /* LoginViewController.swift in Sources */,
+				EC41F45B1FDE2C420013E731 /* SignupViewController.swift in Sources */,
 				ECFF07351FD38DD000ACD6C7 /* Post.swift in Sources */,
 				ECE551891FD201F100E02654 /* DashboardViewController.swift in Sources */,
 				ECE551871FD201F100E02654 /* AppDelegate.swift in Sources */,
