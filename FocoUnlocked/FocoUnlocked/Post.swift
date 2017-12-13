@@ -10,13 +10,15 @@ import Foundation
 
 class Post {
     let username: String;
+    let userImage: NSData;
     let time: NSDate;
     let dishName: String;
     let image: NSData;
     let likes: Int;
     
-    init(username: String, time: NSDate, dishName: String, image: NSData, likes: Int) {
+    init(username: String, userImage: NSData, time: NSDate, dishName: String, image: NSData, likes: Int) {
         self.username = username
+        self.userImage = userImage
         self.time = time
         self.dishName = dishName
         self.image = image

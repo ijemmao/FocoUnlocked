@@ -32,7 +32,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print("This isn't a valid post")
             return
         }
-        let newPost = Post(username: "Kendrick Lamar", time: currentTime, dishName: dishTitle.text!, image: UIImagePNGRepresentation(pickedImage.image!)! as NSData, likes: 0);
+        // TODO: change userImage to be dynamic
+        let newPost = Post(username: "Kendrick Lamar", userImage: UIImagePNGRepresentation(UIImage(named: "user")!)! as NSData, time: currentTime, dishName: dishTitle.text!, image: UIImagePNGRepresentation(pickedImage.image!)! as NSData, likes: 0);
         print(newPost.toString());
         // goes back to the dashboard
         navigationController?.popViewController(animated: true)
