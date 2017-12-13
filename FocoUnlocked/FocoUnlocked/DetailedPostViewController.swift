@@ -21,7 +21,7 @@ class DetailedPostViewController: UIViewController {
     }
     
     @IBAction func goBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+         self.dismiss(animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

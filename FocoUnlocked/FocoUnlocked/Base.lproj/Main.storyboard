@@ -504,6 +504,7 @@
                                         <state key="normal" image="back"/>
                                         <connections>
                                             <action selector="goBack:" destination="fOY-mu-in5" eventType="touchUpInside" id="21v-V5-HkP"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="wbu-Z2-3T1"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -823,6 +824,6 @@
         <image name="star" width="108" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Ns-pd-AFr"/>
+        <segue reference="wbu-Z2-3T1"/>
     </inferredMetricsTieBreakers>
 </document>
