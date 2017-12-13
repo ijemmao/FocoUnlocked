@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BACB5B332042A834DA0892E /* Pods_FocoUnlocked.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE14A873C9ACF2A1AC5CDFE2 /* Pods_FocoUnlocked.framework */; };
 		EC41F45B1FDE2C420013E731 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC41F45A1FDE2C420013E731 /* SignupViewController.swift */; };
 		EC41F45D1FDE3D400013E731 /* LeftPaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC41F45C1FDE3D400013E731 /* LeftPaddedTextField.swift */; };
 		EC47FC011FE0BBC800A7F75D /* DetailedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC47FC001FE0BBC800A7F75D /* DetailedPostViewController.swift */; };
@@ -22,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F7A07017E619B1927101E81 /* Pods-FocoUnlocked.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocoUnlocked.release.xcconfig"; path = "Pods/Target Support Files/Pods-FocoUnlocked/Pods-FocoUnlocked.release.xcconfig"; sourceTree = "<group>"; };
+		A9422204E68820D45493771C /* Pods-FocoUnlocked.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FocoUnlocked.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FocoUnlocked/Pods-FocoUnlocked.debug.xcconfig"; sourceTree = "<group>"; };
+		CE14A873C9ACF2A1AC5CDFE2 /* Pods_FocoUnlocked.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocoUnlocked.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC41F45A1FDE2C420013E731 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		EC41F45C1FDE3D400013E731 /* LeftPaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftPaddedTextField.swift; sourceTree = "<group>"; };
 		EC47FC001FE0BBC800A7F75D /* DetailedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPostViewController.swift; sourceTree = "<group>"; };
@@ -43,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BACB5B332042A834DA0892E /* Pods_FocoUnlocked.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064A59EBA81A508149509515 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE14A873C9ACF2A1AC5CDFE2 /* Pods_FocoUnlocked.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51CA78F9B1340110BAF2F60B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9422204E68820D45493771C /* Pods-FocoUnlocked.debug.xcconfig */,
+				7F7A07017E619B1927101E81 /* Pods-FocoUnlocked.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ECE5517A1FD201F100E02654 = {
 			isa = PBXGroup;
 			children = (
 				ECE551851FD201F100E02654 /* FocoUnlocked */,
 				ECE551841FD201F100E02654 /* Products */,
+				51CA78F9B1340110BAF2F60B /* Pods */,
+				064A59EBA81A508149509515 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECE551951FD201F100E02654 /* Build configuration list for PBXNativeTarget "FocoUnlocked" */;
 			buildPhases = (
+				FA28EFE4FB7E3E26C31D5D2B /* [CP] Check Pods Manifest.lock */,
 				ECE5517F1FD201F100E02654 /* Sources */,
 				ECE551801FD201F100E02654 /* Frameworks */,
 				ECE551811FD201F100E02654 /* Resources */,
+				91E188CCBEAB349347E418C3 /* [CP] Embed Pods Frameworks */,
+				D441F810EA14FCC75BEBB986 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -151,6 +178,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		91E188CCBEAB349347E418C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FocoUnlocked/Pods-FocoUnlocked-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FocoUnlocked/Pods-FocoUnlocked-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D441F810EA14FCC75BEBB986 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FocoUnlocked/Pods-FocoUnlocked-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA28EFE4FB7E3E26C31D5D2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FocoUnlocked-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ECE5517F1FD201F100E02654 /* Sources */ = {
@@ -300,6 +381,7 @@
 		};
 		ECE551961FD201F100E02654 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9422204E68820D45493771C /* Pods-FocoUnlocked.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +396,7 @@
 		};
 		ECE551971FD201F100E02654 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F7A07017E619B1927101E81 /* Pods-FocoUnlocked.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
