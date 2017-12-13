@@ -51,10 +51,10 @@ class SignupViewController: UIViewController {
                 return
             }
             print("\(self.emailInput.text!) created!")
+            // adds username with user id into database
             self.ref.child("users/\(user!.uid)/username").setValue(self.usernameInput.text!)
             self.performSegue(withIdentifier: "signedUp", sender: nil)
         }
-        // TODO: make new account with firebase
     }
     
     @IBAction func login(_ sender: Any) {
