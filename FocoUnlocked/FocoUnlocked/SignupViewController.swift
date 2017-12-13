@@ -40,11 +40,12 @@ class SignupViewController: UIViewController {
             print("There's a signup error")
             return
         }
+        performSegue(withIdentifier: "signedUp", sender: nil)
         // TODO: make new account with firebase
     }
     
     @IBAction func login(_ sender: Any) {
-        // TODO: connect segue in code
+        performSegue(withIdentifier: "toLogin", sender: nil)
     }
     
     func isValidSignup(username: UITextField, email: UITextField, password: UITextField) -> Int {

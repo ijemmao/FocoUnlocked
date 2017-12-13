@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
             print("There's a login error")
             return
         }
+        performSegue(withIdentifier: "loggedIn", sender: nil)
         // TODO: login in with firebase
     }
     
@@ -55,7 +56,7 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func signup(_ sender: Any) {
-        // TODO: connect segue in code
+        performSegue(withIdentifier: "toSignup", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {
