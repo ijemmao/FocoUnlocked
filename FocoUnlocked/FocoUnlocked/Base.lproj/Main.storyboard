@@ -326,7 +326,7 @@
                                     <constraint firstAttribute="width" constant="375" id="iEk-nC-qQT"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Post" rowHeight="355" id="CDz-bL-O0y" customClass="PostCellTableViewCell" customModule="FocoUnlocked" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Post" rowHeight="355" id="CDz-bL-O0y" customClass="PostCellTableViewCell" customModule="FocoUnlocked" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="355"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CDz-bL-O0y" id="FFi-Cl-PLm">
@@ -824,6 +824,7 @@
         <image name="star" width="108" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="AWj-R2-dF7"/>
         <segue reference="wbu-Z2-3T1"/>
     </inferredMetricsTieBreakers>
 </document>
