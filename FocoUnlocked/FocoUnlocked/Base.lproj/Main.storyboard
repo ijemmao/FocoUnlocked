@@ -60,7 +60,6 @@
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="qJx-B8-JOO" eventType="touchUpInside" id="Wqb-CT-yMK"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="dXo-12-v0G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRJ-p2-s7L">
@@ -74,7 +73,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signup:" destination="qJx-B8-JOO" eventType="touchUpInside" id="fU9-at-stk"/>
-                                    <segue destination="vpO-Wl-hh0" kind="show" id="y87-dz-FUh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,6 +96,8 @@
                     <connections>
                         <outlet property="emailInput" destination="9qb-BM-pQ1" id="Yml-Hn-Axc"/>
                         <outlet property="passwordInput" destination="m1M-SX-3C6" id="WND-xo-ulB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loggedIn" id="Dkc-Y0-KEY"/>
+                        <segue destination="vpO-Wl-hh0" kind="show" identifier="toSignup" id="ENj-uP-8GW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28q-DY-OYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,7 +154,6 @@
                                 <connections>
                                     <action selector="login:" destination="qJx-B8-JOO" eventType="touchUpInside" id="MUB-8N-UHg"/>
                                     <action selector="login:" destination="vpO-Wl-hh0" eventType="touchUpInside" id="YcF-A1-DhW"/>
-                                    <segue destination="qJx-B8-JOO" kind="show" id="11L-mV-4jq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWJ-10-TuN">
@@ -169,7 +168,6 @@
                                 <connections>
                                     <action selector="signup:" destination="qJx-B8-JOO" eventType="touchUpInside" id="TD7-7X-0US"/>
                                     <action selector="signup:" destination="vpO-Wl-hh0" eventType="touchUpInside" id="jf5-Ie-nbP"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="CTg-VH-nGF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -197,11 +195,13 @@
                         <outlet property="emailInput" destination="VkA-pt-Lkb" id="VQC-fk-Gcz"/>
                         <outlet property="passwordInput" destination="JN7-DM-aUN" id="Q8R-Ia-8Bs"/>
                         <outlet property="usernameInput" destination="S9t-3G-Zdb" id="c4B-y1-caa"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="signedUp" id="8Ns-pd-AFr"/>
+                        <segue destination="qJx-B8-JOO" kind="show" identifier="toLogin" id="nmh-mr-dkG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWU-AS-rLB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-639" y="715"/>
+            <point key="canvasLocation" x="-1354" y="788"/>
         </scene>
         <!--Dash-->
         <scene sceneID="tne-QT-ifu">
@@ -326,7 +326,7 @@
                                     <constraint firstAttribute="width" constant="375" id="iEk-nC-qQT"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Post" rowHeight="355" id="CDz-bL-O0y" customClass="PostCellTableViewCell" customModule="FocoUnlocked" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Post" rowHeight="355" id="CDz-bL-O0y" customClass="PostCellTableViewCell" customModule="FocoUnlocked" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="355"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CDz-bL-O0y" id="FFi-Cl-PLm">
@@ -463,10 +463,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed Post View Controller-->
         <scene sceneID="4ba-nP-WmH">
             <objects>
-                <viewController id="fOY-mu-in5" sceneMemberID="viewController">
+                <viewController id="fOY-mu-in5" customClass="DetailedPostViewController" customModule="FocoUnlocked" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GFf-zj-OjQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -490,6 +490,9 @@
                                             <constraint firstAttribute="width" secondItem="dKN-ac-EUM" secondAttribute="height" multiplier="1:1" constant="-6" id="CFF-I6-ca4"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="flag"/>
+                                        <connections>
+                                            <action selector="flagPost:" destination="fOY-mu-in5" eventType="touchUpInside" id="QIr-AP-J1b"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDx-yl-kUv">
                                         <rect key="frame" x="13" y="28" width="15" height="25"/>
@@ -500,6 +503,7 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                         <connections>
+                                            <action selector="goBack:" destination="fOY-mu-in5" eventType="touchUpInside" id="21v-V5-HkP"/>
                                             <segue destination="BYZ-38-t0r" kind="show" id="wbu-Z2-3T1"/>
                                         </connections>
                                     </button>
@@ -635,7 +639,7 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="3ud-fq-ea4"/>
+                                            <action selector="goBack:" destination="cIQ-fk-XKg" eventType="touchUpInside" id="mPj-bP-Wqn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piV-SH-qQX">
@@ -820,6 +824,7 @@
         <image name="star" width="108" height="108"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dXo-12-v0G"/>
+        <segue reference="AWj-R2-dF7"/>
+        <segue reference="wbu-Z2-3T1"/>
     </inferredMetricsTieBreakers>
 </document>

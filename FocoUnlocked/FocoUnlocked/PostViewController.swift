@@ -34,6 +34,8 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         let newPost = Post(username: "Kendrick Lamar", time: currentTime, dishName: dishTitle.text!, image: UIImagePNGRepresentation(pickedImage.image!)! as NSData, likes: 0);
         print(newPost.toString());
+        // goes back to the dashboard
+        navigationController?.popViewController(animated: true)
     }
     
     // checks if post is valid
@@ -85,7 +87,10 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dismiss(animated:true, completion: nil)
     }
     
-
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
