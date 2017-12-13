@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
+    var ref: FIRDatabaseReference!
+    
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = FIRDatabase.database().reference()
         // includes icons to the left of email and password inputs
         textFieldImage(textField: emailInput, imageName: "email", x: 10, y: 15, width: 30, height: 20)
         textFieldImage(textField: passwordInput, imageName: "padlock", x: 15, y: 13, width: 20, height: 25)
@@ -35,8 +40,14 @@ class LoginViewController: UIViewController {
             print("There's a login error")
             return
         }
-        performSegue(withIdentifier: "loggedIn", sender: nil)
-        // TODO: login in with firebase
+        FIRAuth.auth()?.signIn(withEmail: emailInput.text!, password: passwordInput.text!) { (user, error) in
+            if let error = error {
+                print("There's an error signing into an account with firebase: \(error)")
+                return
+            }
+            print("\(self.emailInput.text!) successfully logged in!")
+            self.performSegue(withIdentifier: "loggedIn", sender: nil)
+        }
     }
     
     // checks if given credentials are valid

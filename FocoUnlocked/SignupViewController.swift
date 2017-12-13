@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class SignupViewController: UIViewController {
+    
+    var ref: FIRDatabaseReference!
 
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var usernameInput: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = FIRDatabase.database().reference()
         // includes icons to the left of email and password inputs
         textFieldImage(textField: emailInput, imageName: "email", x: 10, y: 15, width: 30, height: 20)
         textFieldImage(textField: passwordInput, imageName: "padlock", x: 15, y: 13, width: 20, height: 25)
@@ -40,8 +45,16 @@ class SignupViewController: UIViewController {
             print("There's a signup error")
             return
         }
-        performSegue(withIdentifier: "signedUp", sender: nil)
-        // TODO: make new account with firebase
+        FIRAuth.auth()?.createUser(withEmail: emailInput.text!, password: passwordInput.text!) { (user, error) in
+            if let error = error {
+                print("There's an error creating an account with firebase: \(error)")
+                return
+            }
+            print("\(self.emailInput.text!) created!")
+            // adds username with user id into database
+            self.ref.child("users/\(user!.uid)/username").setValue(self.usernameInput.text!)
+            self.performSegue(withIdentifier: "signedUp", sender: nil)
+        }
     }
     
     @IBAction func login(_ sender: Any) {
