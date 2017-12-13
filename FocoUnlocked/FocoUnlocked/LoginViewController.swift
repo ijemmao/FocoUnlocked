@@ -15,13 +15,19 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailInput.leftViewMode = .always
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-        let image = UIImage(named: "email.png")
+        // includes icons to the left of email and password inputs
+        textFieldImage(textField: emailInput, imageName: "email", x: 10, y: 15, width: 30, height: 20)
+        textFieldImage(textField: passwordInput, imageName: "padlock", x: 15, y: 13, width: 20, height: 25)
+    }
+    
+    func textFieldImage(textField: UITextField, imageName: String, x: Int, y: Int, width: Int, height: Int) {
+        let imageView = UIImageView(frame: CGRect(x: x, y: y, width: width, height: height))
+        let image = UIImage(named: imageName)
         imageView.image = image
-        emailInput.leftView = imageView
-        passwordInput.leftViewMode = .always
-        // Do any additional setup after loading the view.
+        textField.addSubview(imageView)
+        let leftView = UIView(frame: CGRect(x: 15, y: 0, width: 50, height: 30))
+        textField.leftView = leftView
+        textField.leftViewMode = .always
     }
 
     @IBAction func login(_ sender: Any) {
