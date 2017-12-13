@@ -463,10 +463,10 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed Post View Controller-->
         <scene sceneID="4ba-nP-WmH">
             <objects>
-                <viewController id="fOY-mu-in5" sceneMemberID="viewController">
+                <viewController id="fOY-mu-in5" customClass="DetailedPostViewController" customModule="FocoUnlocked" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GFf-zj-OjQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -490,6 +490,9 @@
                                             <constraint firstAttribute="width" secondItem="dKN-ac-EUM" secondAttribute="height" multiplier="1:1" constant="-6" id="CFF-I6-ca4"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="flag"/>
+                                        <connections>
+                                            <action selector="flagPost:" destination="fOY-mu-in5" eventType="touchUpInside" id="QIr-AP-J1b"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDx-yl-kUv">
                                         <rect key="frame" x="13" y="28" width="15" height="25"/>
@@ -500,7 +503,7 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="wbu-Z2-3T1"/>
+                                            <action selector="goBack:" destination="fOY-mu-in5" eventType="touchUpInside" id="21v-V5-HkP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -635,7 +638,7 @@
                                         </constraints>
                                         <state key="normal" image="back"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="3ud-fq-ea4"/>
+                                            <action selector="goBack:" destination="cIQ-fk-XKg" eventType="touchUpInside" id="mPj-bP-Wqn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piV-SH-qQX">
