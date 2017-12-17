@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class DashboardViewController: UIViewController, UITableViewDataSource {
     
+    var ref: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        ref = FIRDatabase.database().reference()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +40,13 @@ class DashboardViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        var count = 0
+        ref.child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            count = (value?.count)!
+            return
+        })
+        return count
     }
 
 }

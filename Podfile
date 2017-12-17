@@ -7,6 +7,7 @@ target 'FocoUnlocked' do
 
   # Pods for FocoUnlocked
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'

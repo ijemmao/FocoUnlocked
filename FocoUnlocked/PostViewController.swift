@@ -71,6 +71,7 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 //            if let uploadData = UIImagePNGRepresentation(UIImage(named: "user")!) {
 //                self.storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
 //                    if error != nil {
+//                        print("ijemma onwuzulike is debugging right now!")
 //                        print(error)
 //                        return
 //                    }
