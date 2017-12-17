@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -32,8 +34,15 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print("This isn't a valid post")
             return
         }
-        // TODO: change userImage to be dynamic
-        let newPost = Post(username: "Kendrick Lamar", userImage: UIImagePNGRepresentation(UIImage(named: "user")!)! as NSData, time: currentTime, dishName: dishTitle.text!, image: UIImagePNGRepresentation(pickedImage.image!)! as NSData, likes: 0);
+        
+        let user = FIRAuth.auth().currentUser
+        // User signed in
+        if let user = user {
+            let uid = user.uid
+            let email = user.email
+            let photoURL = user.photoURL
+        }
+        let newPost = Post(username: user.uid, userImage: UIImagePNGRepresentation(UIImage(named: "user")!)! as NSData, time: currentTime, dishName: dishTitle.text!, image: UIImagePNGRepresentation(pickedImage.image!)! as NSData, likes: 0);
         print(newPost.toString());
         // goes back to the dashboard
         navigationController?.popViewController(animated: true)
