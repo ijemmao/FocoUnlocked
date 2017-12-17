@@ -32,11 +32,20 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func dateToString(date: Date) -> NSString {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return formatter.string(from: date as Date) as NSString
+    }
+    
+    func imageToData(image: UIImage) -> NSData {
+        return UIImagePNGRepresentation(image)! as NSData
+    }
     @IBAction func savePost(_ sender: Any) {
         
         // TODO: refactor this function
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
         
         // Creating new post object
         let currentTime = NSDate()
@@ -50,22 +59,26 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 return
             }
             
-            let newPost = Post(username: self.username, userImage: UIImagePNGRepresentation(UIImage(named: "user")!)! as NSData, time: formatter.string(from: currentTime as Date) as NSString, dishName: self.dishTitle.text!, image: UIImagePNGRepresentation(self.pickedImage.image!)! as NSData, likes: 0);
-            self.ref.child("posts").setValue(newPost.toDictionary())
+            let currentDate = self.dateToString(date: currentTime as Date)
+            let profileImage = self.imageToData(image: UIImage(named: "user")!)
+            let dishImage = self.imageToData(image: self.pickedImage.image!)
+            
+            let newPost = Post(id: UUID().uuidString, username: self.username, userImage: profileImage, time: currentDate, dishName: self.dishTitle.text!, image: dishImage, likes: 0);
+            self.ref.child("posts/" + UUID().uuidString).setValue(newPost.toDictionary())
             print(newPost.toString());
             
-            self.storageRef.child(self.username + "/userImage.png")
-            if let uploadData = UIImagePNGRepresentation(UIImage(named: "user")!) {
-                self.storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
-                    if error != nil {
-                        print(error)
-                        return
-                    }
-                    print(metadata)
-                })
-            }
+//            self.storageRef.child(self.username + "/userImage.png")
+//            if let uploadData = UIImagePNGRepresentation(UIImage(named: "user")!) {
+//                self.storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+//                    if error != nil {
+//                        print(error)
+//                        return
+//                    }
+//                    print(metadata)
+//                })
+//            }
             // goes back to the dashboard
-//            self.navigationController?.popViewController(animated: true)
+            self.navigationController?.popViewController(animated: true)
         }) { (error) in
             print(error.localizedDescription)
         }

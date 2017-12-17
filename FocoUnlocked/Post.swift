@@ -9,6 +9,7 @@
 import Foundation
 
 class Post {
+    let id: String;
     let username: String;
     let userImage: NSData;
     let time: NSString;
@@ -16,7 +17,8 @@ class Post {
     let image: NSData;
     let likes: Int;
     
-    init(username: String, userImage: NSData, time: NSString, dishName: String, image: NSData, likes: Int) {
+    init(id: String, username: String, userImage: NSData, time: NSString, dishName: String, image: NSData, likes: Int) {
+        self.id = id
         self.username = username
         self.userImage = userImage
         self.time = time
@@ -36,6 +38,7 @@ class Post {
     
     func toDictionary() -> NSDictionary {
         let post  = [
+            "id": self.id,
             "username": self.username,
             "time": self.time,
             "dishName": self.dishName,
