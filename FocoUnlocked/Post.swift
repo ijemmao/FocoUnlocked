@@ -11,12 +11,12 @@ import Foundation
 class Post {
     let username: String;
     let userImage: NSData;
-    let time: NSDate;
+    let time: NSString;
     let dishName: String;
     let image: NSData;
     let likes: Int;
     
-    init(username: String, userImage: NSData, time: NSDate, dishName: String, image: NSData, likes: Int) {
+    init(username: String, userImage: NSData, time: NSString, dishName: String, image: NSData, likes: Int) {
         self.username = username
         self.userImage = userImage
         self.time = time
@@ -32,5 +32,15 @@ class Post {
         state += "\nDish Name: \(self.dishName)"
         state += "\nLikes: \(self.likes)"
         return state
+    }
+    
+    func toDictionary() -> NSDictionary {
+        let post  = [
+            "username": self.username,
+            "time": self.time,
+            "dishName": self.dishName,
+            "likes": likes
+            ] as [String : Any]
+        return post as NSDictionary
     }
 }

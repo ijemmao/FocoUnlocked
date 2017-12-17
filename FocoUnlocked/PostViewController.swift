@@ -12,15 +12,20 @@ import FirebaseDatabase
 
 class PostViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var ref: FIRDatabaseReference!
+    var storageRef: FIRStorageReference!
+    
     @IBOutlet weak var dishTitle: UITextField!
     @IBOutlet weak var ingredients: UITextView!
     @IBOutlet weak var pickedImage: UIImageView!
     @IBOutlet weak var directions: UITextView!
+    var username: String!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        ref = FIRDatabase.database().reference()
+        storageRef = FIRStorage.storage().reference()
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,24 +33,45 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Dispose of any resources that can be recreated.
     }
     @IBAction func savePost(_ sender: Any) {
+        
+        // TODO: refactor this function
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
         // Creating new post object
         let currentTime = NSDate()
-        if (isPostValid(username: "Kendrick Lamar", dishName: dishTitle, image: pickedImage) != 0) {
-            print("This isn't a valid post")
-            return
+        
+        ref.child("users").child((FIRAuth.auth()?.currentUser?.uid)!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            self.username = value?["username"] as? String ?? ""
+            
+            if (self.isPostValid(username: self.username, dishName: self.dishTitle, image: self.pickedImage) != 0) {
+                print("This isn't a valid post")
+                return
+            }
+            
+            let newPost = Post(username: self.username, userImage: UIImagePNGRepresentation(UIImage(named: "user")!)! as NSData, time: formatter.string(from: currentTime as Date) as NSString, dishName: self.dishTitle.text!, image: UIImagePNGRepresentation(self.pickedImage.image!)! as NSData, likes: 0);
+            self.ref.child("posts").setValue(newPost.toDictionary())
+            print(newPost.toString());
+            
+            self.storageRef.child(self.username + "/userImage.png")
+            if let uploadData = UIImagePNGRepresentation(UIImage(named: "user")!) {
+                self.storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        print(error)
+                        return
+                    }
+                    print(metadata)
+                })
+            }
+            // goes back to the dashboard
+//            self.navigationController?.popViewController(animated: true)
+        }) { (error) in
+            print(error.localizedDescription)
         }
         
-        let user = FIRAuth.auth().currentUser
-        // User signed in
-        if let user = user {
-            let uid = user.uid
-            let email = user.email
-            let photoURL = user.photoURL
-        }
-        let newPost = Post(username: user.uid, userImage: UIImagePNGRepresentation(UIImage(named: "user")!)! as NSData, time: currentTime, dishName: dishTitle.text!, image: UIImagePNGRepresentation(pickedImage.image!)! as NSData, likes: 0);
-        print(newPost.toString());
-        // goes back to the dashboard
-        navigationController?.popViewController(animated: true)
+        
+        
     }
     
     // checks if post is valid
@@ -102,13 +128,14 @@ class PostViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
